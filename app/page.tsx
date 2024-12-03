@@ -9,7 +9,6 @@ import CTA from '@/components/cta'
 import Footer from '@/components/footer'
 import PromoBar from '@/components/promo-bar'
 import Calculator from '@/components/calculator'
-import TryBoom from '@/components/try-boom'
 
 export default function Home() {
   return (
@@ -19,10 +18,9 @@ export default function Home() {
       <Hero />
       <Features />
       <Vision />
-      <HowItWorks />
       <Calculator />
+      <HowItWorks />
       <Team />
-      <TryBoom />
       <FAQ />
       <CTA />
       <Footer />

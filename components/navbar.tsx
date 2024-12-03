@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
+import { PlayCircle } from 'lucide-react'
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -39,11 +40,18 @@ export default function Navbar() {
             </Link>
             <div className="hidden md:block ml-10">
               <div className="flex items-center space-x-8">
-                <Link href="#overview" className="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">
+                <Link href="/#overview" className="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">
                   Overview
                 </Link>
-                <Link href="#contact" className="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">
+                <Link href="/#contact" className="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">
                   Contact
+                </Link>
+                <Link 
+                  href="/demo" 
+                  className="text-[#7fd8be] hover:text-[#6bc4aa] px-3 py-2 text-sm font-medium flex items-center gap-2"
+                >
+                  <PlayCircle className="w-4 h-4" />
+                  Try Demo
                 </Link>
               </div>
             </div>
