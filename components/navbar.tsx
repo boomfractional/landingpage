@@ -58,7 +58,7 @@ export default function Navbar() {
           </div>
           <div>
             <Button asChild className="bg-[#7fd8be] text-black hover:bg-[#6bc4aa] font-semibold">
-              <Link href="/form">Join Waitlist!</Link>
+            <Link href="https://boomfractional.com">Join Waitlist</Link>
             </Button>
           </div>
         </div>

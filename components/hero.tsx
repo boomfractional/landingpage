@@ -52,7 +52,7 @@ export default function Hero() {
               size="lg" 
               className="bg-[#263438] border border-[#7fd8be] hover:bg-[#324450] text-white text-xl px-12 py-6 h-auto"
             >
-              <Link href="/form">Join Waitlist</Link>
+              <Link href="https://boomfractional.com">Join Waitlist</Link>
             </Button>
             <Button
               asChild
