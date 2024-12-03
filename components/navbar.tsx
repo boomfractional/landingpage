@@ -27,15 +27,15 @@ export default function Navbar() {
       isPromoVisible ? "top-[44px]" : "top-0"
     )}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-28">
           <div className="flex items-center">
             <Link href="/" className="flex-shrink-0">
               <Image
                 src="https://framerusercontent.com/images/RRFeGXefm55C4fLfDA2mFQQd8Y.png"
                 alt="Boom Logo"
-                width={113}
-                height={40}
-                className="h-10 w-auto"
+                width={250}
+                height={89}
+                className="h-24 w-auto"
               />
             </Link>
             <div className="hidden md:block ml-10">
