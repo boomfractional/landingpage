@@ -33,7 +33,7 @@ export default function PortfolioPage() {
                 variant="outline" 
                 className="text-white border-gray-700 hover:bg-[#263438]"
               >
-                <Link href="/demo" className="flex items-center gap-2">
+                <Link href="/marketplace" className="flex items-center gap-2">
                   <ArrowLeft className="w-4 h-4" />
                   Back to Properties
                 </Link>

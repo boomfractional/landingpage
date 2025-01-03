@@ -52,7 +52,7 @@ export default function Hero() {
               size="lg" 
               className="bg-[#263438] border border-[#7fd8be] hover:bg-[#324450] text-white text-xl px-12 py-6 h-auto"
             >
-              <Link href="https://boomfractional.com">Join Waitlist</Link>
+              <Link href="/form">Join Waitlist</Link>
             </Button>
             <Button
               asChild
@@ -60,7 +60,7 @@ export default function Hero() {
               variant="ghost"
               className="text-white hover:text-[#7fd8be] text-xl px-12 py-6 h-auto flex items-center gap-2"
             >
-              <Link href="/demo">
+              <Link href="/demo/developer/projects">
                 <PlayCircle className="w-6 h-6" />
                 Try Demo
               </Link>

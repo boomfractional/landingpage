@@ -43,11 +43,11 @@ export default function Navbar() {
                 <Link href="/#overview" className="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">
                   Overview
                 </Link>
-                <Link href="/#contact" className="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">
-                  Contact
+                <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">
+                  Marketplace
                 </Link>
                 <Link 
-                  href="/demo" 
+                  href="/demo/developer/projects" 
                   className="text-[#7fd8be] hover:text-[#6bc4aa] px-3 py-2 text-sm font-medium flex items-center gap-2"
                 >
                   <PlayCircle className="w-4 h-4" />
@@ -58,7 +58,7 @@ export default function Navbar() {
           </div>
           <div>
             <Button asChild className="bg-[#7fd8be] text-black hover:bg-[#6bc4aa] font-semibold">
-            <Link href="https://boomfractional.com">Join Waitlist</Link>
+              <Link href="/form">Join Waitlist!</Link>
             </Button>
           </div>
         </div>

@@ -10,7 +10,7 @@ import { FadeInWhenVisible } from '@/components/animations/fade-in-when-visible'
 import PropertyCard from '@/components/property-card'
 import { properties } from '@/lib/data/properties'
 
-export default function DemoPage() {
+export default function MarketplacePage() {
   return (
     <main className="min-h-screen bg-[#0b0e0f]">
       <PromoBar />
@@ -22,10 +22,10 @@ export default function DemoPage() {
             <div className="mb-12 flex justify-between items-center">
               <div>
                 <h1 className="text-3xl font-bold text-white mb-4 font-plus-jakarta-sans">
-                  Platform Demo
+                  Property Marketplace
                 </h1>
                 <p className="text-gray-400">
-                  Experience how Boom makes real estate investing simple and accessible
+                  Browse and invest in our curated selection of high-yield properties
                 </p>
               </div>
               <div className="flex gap-4">
@@ -49,26 +49,6 @@ export default function DemoPage() {
               </FadeInWhenVisible>
             ))}
           </div>
-
-          <FadeInWhenVisible>
-            <div className="mt-20 text-center">
-              <h2 className="text-2xl font-bold text-white mb-4 font-plus-jakarta-sans">
-                For Real Estate Developers
-              </h2>
-              <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
-                List your properties and manage your offerings with our comprehensive developer tools
-              </p>
-              <Button 
-                asChild
-                className="bg-[#263438] border border-[#7fd8be] hover:bg-[#324450] text-white"
-              >
-                <Link href="/demo/developer/projects" className="flex items-center gap-2">
-                  <Building2 className="w-4 h-4" />
-                  Try Developer Dashboard
-                </Link>
-              </Button>
-            </div>
-          </FadeInWhenVisible>
         </div>
       </div>
     </main>
