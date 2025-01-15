@@ -45,7 +45,7 @@ export default function DemoPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {Object.entries(properties).map(([id, property], index) => (
               <FadeInWhenVisible key={id} delay={index * 0.1}>
-                <PropertyCard id={id as keyof typeof properties} property={property} />
+                <PropertyCard id={id as unknown as keyof typeof properties} property={property} />
               </FadeInWhenVisible>
             ))}
           </div>

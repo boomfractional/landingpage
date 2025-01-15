@@ -1,21 +1,30 @@
+"use client"
+
+import { useState } from 'react'
 import Image from 'next/image'
 
 const team = [
   {
-    name: "Sarah Johnson",
-    role: "CEO & Founder",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&q=80",
-    bio: "15+ years in real estate and fintech"
+    name: "Trinayaan Hariharan",
+    role: "Co-Founder",
+    image: "/trinayaan.jpg",
+    bio: "Ex-Travelers, Georgia Tech CS"
   },
   {
-    name: "Michael Chen",
-    role: "CTO",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&q=80",
-    bio: "Ex-Google, blockchain expert"
+    name: "Sai Koppu",
+    role: "Co-Founder",
+    image: "/sai.jpg",
+    bio: "Ex-Samsung, Georgia Tech CS"
   }
 ]
 
 export default function Team() {
+  const [imageError, setImageError] = useState<{[key: string]: boolean}>({})
+
+  const handleImageError = (name: string) => {
+    setImageError(prev => ({...prev, [name]: true}))
+  }
+
   return (
     <section className="py-24 bg-[#0b0e0f]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -31,13 +40,25 @@ export default function Team() {
           {team.map((member, index) => (
             <div key={index} className="bg-[#151819] p-6 rounded-xl border border-gray-800">
               <div className="mb-6">
-                <Image
-                  src={member.image}
-                  alt={member.name}
-                  width={120}
-                  height={120}
-                  className="rounded-full mx-auto"
-                />
+                <div className="relative w-32 h-32 mx-auto">
+                  {!imageError[member.name] ? (
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      width={128}
+                      height={128}
+                      className="rounded-full object-cover"
+                      onError={() => handleImageError(member.name)}
+                      priority
+                    />
+                  ) : (
+                    <div className="w-full h-full rounded-full bg-gray-800 flex items-center justify-center">
+                      <span className="text-2xl text-white">
+                        {member.name.charAt(0)}
+                      </span>
+                    </div>
+                  )}
+                </div>
               </div>
               <h3 className="text-xl font-semibold text-white mb-1 text-center">{member.name}</h3>
               <p className="text-[#7fd8be] mb-2 text-center">{member.role}</p>
