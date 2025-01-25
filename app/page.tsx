@@ -7,13 +7,11 @@ import Team from '@/components/team'
 import FAQ from '@/components/faq'
 import CTA from '@/components/cta'
 import Footer from '@/components/footer'
-import PromoBar from '@/components/promo-bar'
 import Calculator from '@/components/calculator'
 
 export default function Home() {
   return (
     <main className="relative min-h-screen">
-      <PromoBar />
       <Navbar />
       <Hero />
       <Features />

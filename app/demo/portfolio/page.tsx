@@ -4,7 +4,6 @@ import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import Navbar from '@/components/navbar'
-import PromoBar from '@/components/promo-bar'
 import DeveloperStats from '@/components/developer/stats'
 import PropertyPortfolio from '@/components/developer/property-portfolio'
 import DistributionChart from '@/components/developer/distribution-chart'
@@ -14,7 +13,6 @@ import { ArrowLeft } from 'lucide-react'
 export default function PortfolioPage() {
   return (
     <main className="min-h-screen bg-[#0b0e0f]">
-      <PromoBar />
       <Navbar />
       
       <div className="pt-32 pb-20">

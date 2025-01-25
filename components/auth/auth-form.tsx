@@ -1,36 +1,47 @@
 "use client"
 
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import { useAuth } from '@/hooks/use-auth'
 import { useToast } from '@/hooks/use-toast'
+import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 
 export function AuthForm() {
   const [isSignUp, setIsSignUp] = useState(false)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const { signIn, signUp } = useAuth()
+  const [loading, setLoading] = useState(false)
   const { toast } = useToast()
+  const router = useRouter()
+  const supabase = createClientComponentClient()
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    
-    const { error } = isSignUp 
-      ? await signUp(email, password)
-      : await signIn(email, password)
+    setLoading(true)
 
-    if (error) {
+    try {
+      const { error } = isSignUp 
+        ? await supabase.auth.signUp({ email, password })
+        : await supabase.auth.signInWithPassword({ email, password })
+
+      if (error) throw error
+
+      toast({
+        title: isSignUp ? "Account created" : "Welcome back!",
+        description: isSignUp ? "Please verify your email" : "Successfully signed in"
+      })
+
+      router.push('/demo/developer/projects')
+      router.refresh()
+    } catch (error) {
       toast({
         title: "Error",
         description: error.message,
         variant: "destructive"
       })
-    } else {
-      toast({
-        title: isSignUp ? "Account created" : "Welcome back!",
-        description: isSignUp ? "Please verify your email" : "Successfully signed in"
-      })
+    } finally {
+      setLoading(false)
     }
   }
 
@@ -42,6 +53,7 @@ export function AuthForm() {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         className="bg-[#263438] border-gray-700 text-white"
+        required
       />
       <Input
         type="password"
@@ -49,9 +61,14 @@ export function AuthForm() {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         className="bg-[#263438] border-gray-700 text-white"
+        required
       />
-      <Button type="submit" className="w-full bg-[#7fd8be] text-black hover:bg-[#6bc4aa]">
-        {isSignUp ? "Sign Up" : "Sign In"}
+      <Button 
+        type="submit" 
+        className="w-full bg-[#7fd8be] text-black hover:bg-[#6bc4aa]"
+        disabled={loading}
+      >
+        {loading ? "Loading..." : (isSignUp ? "Sign Up" : "Sign In")}
       </Button>
       <Button
         type="button"

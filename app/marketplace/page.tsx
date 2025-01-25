@@ -5,7 +5,6 @@ import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import { Building2, Briefcase } from 'lucide-react'
 import Navbar from '@/components/navbar'
-import PromoBar from '@/components/promo-bar'
 import { FadeInWhenVisible } from '@/components/animations/fade-in-when-visible'
 import PropertyCard from '@/components/property-card'
 import { properties } from '@/lib/data/properties'
@@ -13,7 +12,6 @@ import { properties } from '@/lib/data/properties'
 export default function MarketplacePage() {
   return (
     <main className="min-h-screen bg-[#0b0e0f]">
-      <PromoBar />
       <Navbar />
       
       <div className="pt-32 pb-20">

@@ -1,5 +1,5 @@
 import { projects } from '@/lib/data/projects'
-import ProjectCRMClient from './project-crm-client'
+import ProjectDetailsClient from './project-details-client'
 
 export function generateStaticParams() {
   return ["1", "2", "3"].map((id) => ({
@@ -7,6 +7,6 @@ export function generateStaticParams() {
   }))
 }
 
-export default function ProjectCRMPage({ params }: { params: { id: string } }) {
-  return <ProjectCRMClient projectId={params.id} />
+export default function ProjectDetailsPage({ params }: { params: { id: string } }) {
+  return <ProjectDetailsClient projectId={params.id} />
 }

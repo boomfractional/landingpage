@@ -5,7 +5,6 @@ import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import { Building2, Briefcase } from 'lucide-react'
 import Navbar from '@/components/navbar'
-import PromoBar from '@/components/promo-bar'
 import { FadeInWhenVisible } from '@/components/animations/fade-in-when-visible'
 import PropertyCard from '@/components/property-card'
 import { properties } from '@/lib/data/properties'
@@ -13,7 +12,6 @@ import { properties } from '@/lib/data/properties'
 export default function DemoPage() {
   return (
     <main className="min-h-screen bg-[#0b0e0f]">
-      <PromoBar />
       <Navbar />
       
       <div className="pt-32 pb-20">
@@ -45,7 +43,7 @@ export default function DemoPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {Object.entries(properties).map(([id, property], index) => (
               <FadeInWhenVisible key={id} delay={index * 0.1}>
-                <PropertyCard id={id as unknown as keyof typeof properties} property={property} />
+                <PropertyCard id={id as keyof typeof properties} property={property} />
               </FadeInWhenVisible>
             ))}
           </div>

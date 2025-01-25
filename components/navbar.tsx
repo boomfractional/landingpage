@@ -9,12 +9,10 @@ import { PlayCircle } from 'lucide-react'
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
-  const [isPromoVisible, setIsPromoVisible] = useState(true)
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50)
-      setIsPromoVisible(window.scrollY <= 50)
     }
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
@@ -22,9 +20,8 @@ export default function Navbar() {
 
   return (
     <nav className={cn(
-      "fixed left-0 right-0 z-[999] transition-all duration-400 ease-in-out",
-      isScrolled ? "bg-black/80 backdrop-blur-sm" : "bg-transparent",
-      isPromoVisible ? "top-[44px]" : "top-0"
+      "fixed left-0 right-0 top-0 z-[999] transition-all duration-400 ease-in-out",
+      isScrolled ? "bg-black/80 backdrop-blur-sm" : "bg-transparent"
     )}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-28">
@@ -42,9 +39,6 @@ export default function Navbar() {
               <div className="flex items-center space-x-8">
                 <Link href="/#overview" className="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">
                   Overview
-                </Link>
-                <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">
-                  Marketplace
                 </Link>
                 <Link 
                   href="/demo/developer/projects" 
