@@ -5,12 +5,14 @@ import { Slider } from "@/components/ui/slider"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 export default function Calculator() {
-  const [investment, setInvestment] = useState(1000)
-  const [years, setYears] = useState(5)
-  const annualReturn = 0.12 // 12% annual return
+  const [projectValue, setProjectValue] = useState(1000000)
+  const [investors, setInvestors] = useState(20)
+  const monthlyFee = 299
+  const annualSavings = 25000 // Estimated annual savings from automation
 
-  const calculateReturns = () => {
-    return investment * Math.pow(1 + annualReturn, years)
+  const calculateROI = () => {
+    const annualCost = monthlyFee * 12
+    return Math.round((annualSavings / annualCost) * 100)
   }
 
   return (
@@ -18,52 +20,62 @@ export default function Calculator() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 font-plus-jakarta-sans">
-            Investment Calculator
+            ROI Calculator
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            See how your investment could grow over time
+            See how much time and money you could save with our platform
           </p>
         </div>
         <div className="max-w-2xl mx-auto">
           <Card className="bg-[#151819] border-gray-800">
             <CardHeader>
-              <CardTitle className="text-white">Calculate Your Returns</CardTitle>
+              <CardTitle className="text-white">Calculate Your Savings</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-8">
                 <div>
                   <label className="block text-sm font-medium text-gray-400 mb-2">
-                    Investment Amount: ${investment.toLocaleString()}
+                    Total Project Value: ${projectValue.toLocaleString()}
                   </label>
                   <Slider
-                    value={[investment]}
-                    onValueChange={(value) => setInvestment(value[0])}
-                    min={100}
-                    max={50000}
-                    step={100}
+                    value={[projectValue]}
+                    onValueChange={(value) => setProjectValue(value[0])}
+                    min={500000}
+                    max={10000000}
+                    step={100000}
                     className="my-4"
                   />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-400 mb-2">
-                    Investment Period: {years} years
+                    Number of Investors: {investors}
                   </label>
                   <Slider
-                    value={[years]}
-                    onValueChange={(value) => setYears(value[0])}
-                    min={1}
-                    max={10}
+                    value={[investors]}
+                    onValueChange={(value) => setInvestors(value[0])}
+                    min={5}
+                    max={100}
                     step={1}
                     className="my-4"
                   />
                 </div>
                 <div className="bg-[#1c1f20] p-6 rounded-lg">
-                  <p className="text-gray-400 mb-2">Projected Value</p>
-                  <p className="text-3xl font-bold text-[#7fd8be]">
-                    ${Math.round(calculateReturns()).toLocaleString()}
-                  </p>
-                  <p className="text-sm text-gray-400 mt-2">
-                    Based on historical returns of 12% annually
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <p className="text-gray-400 mb-2">Estimated Annual Savings</p>
+                      <p className="text-3xl font-bold text-[#7fd8be]">
+                        ${annualSavings.toLocaleString()}
+                      </p>
+                    </div>
+                    <div>
+                      <p className="text-gray-400 mb-2">Return on Investment</p>
+                      <p className="text-3xl font-bold text-[#7fd8be]">
+                        {calculateROI()}x
+                      </p>
+                    </div>
+                  </div>
+                  <p className="text-sm text-gray-400 mt-4">
+                    Based on average time savings and operational costs for similar-sized organizations
                   </p>
                 </div>
               </div>

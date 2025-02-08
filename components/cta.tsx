@@ -9,10 +9,10 @@ export default function CTA() {
         <div className="bg-[#151819] rounded-2xl p-8 md:p-16 border border-gray-800">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 font-plus-jakarta-sans">
-              Ready to Start Your Investment Journey?
+              Ready to Transform Your Syndication Management?
             </h2>
             <p className="text-gray-400 text-lg mb-8">
-              Join thousands of investors building wealth through fractional real estate investment.
+              Join forward-thinking real estate sponsors who are streamlining their operations and providing a better experience for their investors.
             </p>
             <Button asChild size="lg" className="bg-[#7fd8be] text-black hover:bg-[#6bc4aa] font-semibold">
               <Link href="/form" className="flex items-center">

@@ -8,22 +8,22 @@ const visionPoints = [
   {
     icon: Target,
     title: "Our Mission",
-    description: "To democratize real estate investment by making premium properties accessible to everyone through fractional ownership."
+    description: "To empower real estate sponsors with cutting-edge tools that streamline syndication management and enhance investor relationships."
   },
   {
     icon: Globe,
-    title: "Global Impact",
-    description: "Creating a world where property investment isn't limited by geography or wealth, enabling global portfolio diversification."
+    title: "Technology First",
+    description: "Leveraging AI and blockchain to revolutionize how real estate syndications are managed and how sponsors communicate with investors."
   },
   {
     icon: Users,
-    title: "Community First",
-    description: "Building a community of informed investors who can collaborate, learn, and grow their wealth together."
+    title: "Sponsor Success",
+    description: "Building tools that help sponsors scale their operations, reduce administrative overhead, and focus on growing their portfolio."
   },
   {
     icon: TrendingUp,
-    title: "Future Growth",
-    description: "Leveraging technology and AI to identify high-potential properties and maximize returns for our investors."
+    title: "Investor Experience",
+    description: "Creating a seamless, transparent, and engaging experience for investors through personalized portals and automated updates."
   }
 ]
 
@@ -37,7 +37,7 @@ export default function Vision() {
               Our Vision
             </h2>
             <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-              Transforming real estate investment for the digital age
+              Transforming real estate syndication management for the digital age
             </p>
           </div>
         </FadeInWhenVisible>

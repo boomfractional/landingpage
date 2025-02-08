@@ -2,20 +2,20 @@ import { CircleDot } from "lucide-react"
 
 const steps = [
   {
-    title: "Create Account",
-    description: "Sign up in minutes with our simple verification process"
+    title: "Create Your Account",
+    description: "Sign up and set up your organization profile in minutes"
   },
   {
-    title: "Browse Properties",
-    description: "Explore curated real estate opportunities with detailed analytics"
+    title: "Add Your Projects",
+    description: "Import your existing projects or create new ones with our intuitive tools"
   },
   {
-    title: "Invest",
-    description: "Choose your investment amount and complete the transaction securely"
+    title: "Invite Investors",
+    description: "Seamlessly onboard your investors to your branded portal"
   },
   {
-    title: "Track & Earn",
-    description: "Monitor your investments and receive regular returns"
+    title: "Manage & Grow",
+    description: "Use our tools to manage communications, documents, and payments efficiently"
   }
 ]
 
@@ -25,10 +25,10 @@ export default function HowItWorks() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 font-plus-jakarta-sans">
-            How It Works
+            Getting Started is Easy
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Start your investment journey in four simple steps
+            Launch your professional investor portal in four simple steps
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

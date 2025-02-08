@@ -23,7 +23,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            REVOLUTIONIZING REAL ESTATE.
+            STREAMLINE YOUR REAL ESTATE SYNDICATION
           </motion.p>
           <motion.h1 
             className="text-4xl sm:text-6xl lg:text-[86px] font-semibold text-white leading-tight tracking-tight font-plus-jakarta-sans mb-8"
@@ -31,7 +31,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            Invest in fractional<br />real estate
+            The Ultimate Portal<br />for Real Estate Sponsors
           </motion.h1>
           <motion.p 
             className="max-w-2xl mx-auto text-[#B3B3B3] text-lg leading-relaxed mb-12"
@@ -39,7 +39,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
           >
-            Invest fractionally in real estate with AI-tailored listings, enjoy high returns, and seamlessly buy and sell your fractions on Boom's stock-market like platform — your gateway to diversified, high-ROI property investment.
+            Manage your investors, projects, and syndications all in one intuitive platform. Streamline communications, automate workflows, and provide a seamless experience for your investors with our AI-powered dashboard.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
