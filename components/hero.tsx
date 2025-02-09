@@ -3,7 +3,6 @@
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { PlayCircle } from 'lucide-react'
 
 export default function Hero() {
   return (
@@ -45,25 +44,14 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1 }}
-            className="flex items-center justify-center space-x-4"
+            className="flex items-center justify-center"
           >
             <Button 
               asChild 
               size="lg" 
               className="bg-[#263438] border border-[#7fd8be] hover:bg-[#324450] text-white text-xl px-12 py-6 h-auto"
             >
-              <Link href="/form">Join Waitlist</Link>
-            </Button>
-            <Button
-              asChild
-              size="lg"
-              variant="ghost"
-              className="text-white hover:text-[#7fd8be] text-xl px-12 py-6 h-auto flex items-center gap-2"
-            >
-              <Link href="/demo/developer/projects">
-                <PlayCircle className="w-6 h-6" />
-                Try Demo
-              </Link>
+              <a href="https://calendly.com/boomfractional/boom-ai-demo?month=2025-02" target="_blank" rel="noopener noreferrer">Try Demo</a>
             </Button>
           </motion.div>
         </motion.div>

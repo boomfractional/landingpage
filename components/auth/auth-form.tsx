@@ -5,7 +5,6 @@ import { useRouter } from 'next/navigation'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { useToast } from '@/hooks/use-toast'
-import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 
 export function AuthForm() {
   const [isSignUp, setIsSignUp] = useState(false)
@@ -14,19 +13,15 @@ export function AuthForm() {
   const [loading, setLoading] = useState(false)
   const { toast } = useToast()
   const router = useRouter()
-  const supabase = createClientComponentClient()
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
 
     try {
-      const { error } = isSignUp 
-        ? await supabase.auth.signUp({ email, password })
-        : await supabase.auth.signInWithPassword({ email, password })
-
-      if (error) throw error
-
+      // Mock authentication
+      await new Promise(resolve => setTimeout(resolve, 1000))
+      
       toast({
         title: isSignUp ? "Account created" : "Welcome back!",
         description: isSignUp ? "Please verify your email" : "Successfully signed in"
@@ -34,7 +29,7 @@ export function AuthForm() {
 
       router.push('/demo/developer/projects')
       router.refresh()
-    } catch (error) {
+    } catch (error: any) {
       toast({
         title: "Error",
         description: error.message,

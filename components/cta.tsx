@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button"
-import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 
 export default function CTA() {
@@ -15,9 +14,9 @@ export default function CTA() {
               Join forward-thinking real estate sponsors who are streamlining their operations and providing a better experience for their investors.
             </p>
             <Button asChild size="lg" className="bg-[#7fd8be] text-black hover:bg-[#6bc4aa] font-semibold">
-              <Link href="/form" className="flex items-center">
-                Join Waitlist <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
+              <a href="https://calendly.com/boomfractional/boom-ai-demo?month=2025-02" target="_blank" rel="noopener noreferrer" className="flex items-center">
+                Try Demo <ArrowRight className="ml-2 h-5 w-5" />
+              </a>
             </Button>
           </div>
         </div>
