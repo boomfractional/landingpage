@@ -1,15 +1,19 @@
-import './globals.css'
-import { Plus_Jakarta_Sans } from 'next/font/google'
+import "./globals.css";
+import { Inter } from "next/font/google";
 
-const jakarta = Plus_Jakarta_Sans({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: 'Your New Title Here', // Change this line to your desired title
-  description: 'Boom enables anyone to invest in high-growth real estate projects with minimal capital. List your property or invest in top projects, building a diverse portfolio.',
+  title: "Boom - AI for Real Estate Developers",
+  description:
+    "Boom simplifies real estate project management and investor relations with AI and blockchain. Manage projects, vendors, and transactions while keeping investors informed—all in one platform.",
   openGraph: {
-    title: 'Your New Title Here', // Also update this to match
-    description: 'Boom enables anyone to invest in high-growth real estate projects with minimal capital.',
-    images: ['https://framerusercontent.com/images/MjvOZpMUCGclrcZvHLangVwTSU.png'],
+    title: "Boom - AI for Real Estate Developers",
+    description:
+      "Boom simplifies real estate project management and investor relations with AI and blockchain. Manage projects, vendors, and transactions while keeping investors informed—all in one platform.",
+    images: [
+      "https://framerusercontent.com/images/MjvOZpMUCGclrcZvHLangVwTSU.png",
+    ],
   },
 }
 
@@ -20,9 +24,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${jakarta.className} bg-[#0b0e0f]`}>
-        {children}
-      </body>
+      <body className={`${inter.className} bg-[#0b0e0f]`}>{children}</body>
     </html>
   )
 }
