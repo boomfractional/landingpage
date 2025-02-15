@@ -37,7 +37,7 @@ export default function Vision() {
               Our Vision
             </h2>
             <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-              Transforming real estate syndication management for the digital age
+              Transforming real estate syndication management
             </p>
           </div>
         </FadeInWhenVisible>
